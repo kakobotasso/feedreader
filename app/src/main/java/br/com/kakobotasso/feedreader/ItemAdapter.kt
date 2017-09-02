@@ -38,6 +38,8 @@ class ItemAdapter(val list: ArrayList<MainActivity.Item>, val context: Context):
             context.startActivity(intent)
         }
 
+        DownloadImageTask(holder?.image!!).execute(list[position].image)
+
     }
 
     override fun getItemCount(): Int = list.size
